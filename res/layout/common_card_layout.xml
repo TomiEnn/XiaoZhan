@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/common_card_llayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/shou_image_llayout"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp" >
+
+            <ImageView
+                android:id="@+id/shou_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/djsz_1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/shou_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:maxLines="2"
+                android:maxWidth="150dp"
+                android:paddingTop="5dp"
+                android:text="东京食尸鬼"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/shou_button_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:background="@drawable/common_button_selector"
+                android:text="收藏"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp" >
+
+            <Button
+                android:id="@+id/shou_button_userpic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shou_button_userpic" />
+
+            <TextView
+                android:id="@+id/shou_text_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Tomi_Enn"
+                android:textColor="@color/common_list_item"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/shou_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="在纷乱嘈杂的现代化城市—东京，蔓延着一种吞食死尸的怪人，人们称之为食尸鬼。那一日，金木研遇上了某位神秘女子，进而卷入了一场迷之事故。自此，充满波折的命运齿轮开始转动了……"
+                android:textColor="@color/dark_black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

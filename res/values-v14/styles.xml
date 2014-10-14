@@ -1,0 +1,42 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="@style/AppActionBarTheme"></style>
+
+    <style name="AppTheme" parent="@style/AppBaseTheme"></style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/AppActionBarStyle</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:actionButtonStyle">@style/AppActionButtonStyle</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
+        <item name="popupMenuStyle">@style/AppPopupMenuStyle</item>
+        <item name="listPopupWindowStyle">@style/AppListPopupWindowStyle</item>
+        <item name="dropDownListViewStyle">@style/AppDropDownListViewStyle</item>
+    </style>
+
+    <style name="AppActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/actionbar_background</item>
+    </style>
+
+    <style name="AppActionButtonStyle" parent="@style/Widget.AppCompat.Base.ActionButton">
+        <item name="android:background">@drawable/actionbar_item_background</item>
+    </style>
+
+    <style name="AppPopupMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="android:dropDownSelector">@drawable/common_list_selector</item>
+    </style>
+
+    <style name="AppListPopupWindowStyle" parent="@style/Widget.AppCompat.ListPopupWindow">
+        <item name="android:dropDownSelector">@drawable/common_list_selector</item>
+    </style>
+
+    <style name="AppDropDownListViewStyle" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:listSelector">@drawable/common_list_selector</item>
+    </style>
+
+</resources>

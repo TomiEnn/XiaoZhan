@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   
+    
+     <item
+        android:id="@+id/action_search"
+        android:showAsAction="always"
+      android:icon="@drawable/nav_icon_search"
+        android:title="@string/icon_search"/>
+     
+      <item
+        android:id="@+id/action_message"
+        android:showAsAction="always"
+        android:icon="@drawable/nav_icon_msg"
+        android:title="@string/icon_message"/>
+
+</menu>

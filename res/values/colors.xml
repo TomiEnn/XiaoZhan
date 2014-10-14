@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+   
+    <color name="actionbar_background">#51879f</color>
+    <color name="drawer_user_background">#51879f</color>
+    <color name="common_button_clicked">#487f98</color>
+    <color name="common_button_nor">#51879f</color>
+    <color name="common_blue_button_nor">#76c9e0</color>
+    <color name="common_blue_button_cliked">#51879f</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
+    <color name="background_color">#fff5f5f5</color>
+    <color name="common_list_clicked_color">#0f000000</color>
+    <color name="common_line_color">#ffdddddd</color>
+    <color name="common_list_item">#ff666666</color>
+    <color name="common_list_item_selected">#ffd9593d</color>
+    <color name="white">#ffffffff</color>
+    <color name="yellow">#ffffbe21</color>
+    <color name="dark_black">#ff444444</color>
+    <color name="dark_gray">#26000000</color>
+    <color name="light_black">#ff666666</color>
+    <color name="light_gray">#ffcccccc</color>
+    <color name="gray_corners_rect">#ffbbbbbb</color>
+    <color name="main_front_color">#ff333333</color>
+    <color name="unfollow_button_stroke">#ffe5e5e5</color>
+    <color name="follow_button_clicked">#ffe5ab1e</color>
+    <color name="follow_button_nor">#ffffbe21</color>
+    
+</resources>

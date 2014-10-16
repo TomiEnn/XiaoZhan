@@ -13,13 +13,11 @@ public class ShouYeDetailActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.shouye_detail_layout);
+		setContentView(R.layout.common_detail_layout);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
-	/**
-	 * œÚ…œµº∫Ω
-	 */
+	/*
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
@@ -29,5 +27,5 @@ public class ShouYeDetailActivity extends Activity {
 	        return true;
 	    }
 	    return super.onOptionsItemSelected(item);
-	}
+	}*/
 }

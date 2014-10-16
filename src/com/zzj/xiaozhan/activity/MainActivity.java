@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 		//设置默认是首页
 		mDrawerList.setItemChecked(0, true);
 		setFragmentSelection(0);
-		setTitle(mFragmentTitles[0]);
+		setTitle("首页");
 	}
 
 	@Override

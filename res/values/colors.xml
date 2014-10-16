@@ -8,6 +8,12 @@
     <color name="common_button_nor">#51879f</color>
     <color name="common_blue_button_nor">#76c9e0</color>
     <color name="common_blue_button_cliked">#51879f</color>
+    <color name="holo_gray_1">#faf7f7</color>
+    <color name="holo_gray_2">#f2efef</color>
+    <color name="holo_gray_3">#e5e5e5</color>
+    <color name="holo_gray_4">#dcdcdc</color>
+    <color name="holo_gray_5">#c9c9c9</color>
+    
     <color name="holo_blue_light">#ff33b5e5</color>
     <color name="holo_green_light">#ff99cc00</color>
     <color name="holo_orange_light">#ffffbb33</color>
@@ -22,7 +28,6 @@
     <color name="dark_black">#ff444444</color>
     <color name="dark_gray">#26000000</color>
     <color name="light_black">#ff666666</color>
-    <color name="light_gray">#ffcccccc</color>
     <color name="gray_corners_rect">#ffbbbbbb</color>
     <color name="main_front_color">#ff333333</color>
     <color name="unfollow_button_stroke">#ffe5e5e5</color>

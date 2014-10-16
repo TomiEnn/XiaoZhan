@@ -25,6 +25,16 @@ public class Card {
 	 * ÎÄÕÂµÄÄÚÈİ
 	 */
 	private String content;
+	
+	private String webUrl;
+
+	public String getWebUrl() {
+		return webUrl;
+	}
+
+	public void setWebUrl(String webUrl) {
+		this.webUrl = webUrl;
+	}
 
 	public String getImageUrl() {
 		return imageUrl;

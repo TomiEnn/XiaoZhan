@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp" >
+
+        <ImageView
+            android:id="@+id/common_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:clickable="false"
+            android:src="@drawable/djsz_1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#543946"
+        android:paddingTop="8dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:paddingLeft="15dp" >
+
+            <TextView
+                android:id="@+id/common_detail_title"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:text="东京食尸鬼"
+                android:ellipsize="marquee"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/common_detail_user"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:text="Tomi_Enn"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/common_detail_content"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="4"
+            android:text="在纷乱嘈杂的现代化城市-东京，蔓延着一种吞食死尸的怪人，人们称之为食尸鬼。那一日，金木研遇上了某位神秘女子，进而卷入了一场迷之事故。自此，充满波折的命运齿轮开始转动了……"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

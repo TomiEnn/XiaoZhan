@@ -63,7 +63,7 @@ public class HotComicFragment extends Fragment implements OnRefreshListener,
 		listView.setOnItemClickListener(this);
 		// ÏÂÀ­Ë¢ÐÂ
 		swipeLayout = (SwipeRefreshLayout) view
-				.findViewById(R.id.shou_swipe_container);
+				.findViewById(R.id.hot_swipe_container);
 		swipeLayout.setColorScheme(android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
 				android.R.color.holo_orange_light,

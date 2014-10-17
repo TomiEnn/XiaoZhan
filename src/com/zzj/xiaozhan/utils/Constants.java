@@ -9,4 +9,8 @@ public class Constants {
 	 * 无名小站首页的地址
 	 */
 	public final static String HOT_WEB = "http://www.xiaozhan.cc";
+	/**
+	 * 新番动漫的地址
+	 */
+	public final static String NEW_COMIC_WEB = "http://www.xiaozhan.cc/anime";
 }

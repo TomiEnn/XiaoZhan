@@ -11,6 +11,7 @@ import com.zzj.xiaozhan.adapter.DrawerListAdapter;
 import com.zzj.xiaozhan.fragment.ComicKuaiDiFragment;
 import com.zzj.xiaozhan.fragment.HotComicFragment;
 import com.zzj.xiaozhan.fragment.MyFavorFragment;
+import com.zzj.xiaozhan.fragment.NewComicFragment;
 import com.zzj.xiaozhan.fragment.SettingFragment;
 import com.zzj.xiaozhan.fragment.ShouYeFragment;
 
@@ -47,6 +48,7 @@ public class MainActivity extends Activity {
 	private MyFavorFragment myFavorFragment;
 	private SettingFragment settingFragment;
 	private ShouYeFragment shouYeFragment;
+	private NewComicFragment newComicFragment;
 	/**
 	 * 个人管理
 	 */
@@ -171,11 +173,11 @@ public class MainActivity extends Activity {
 			}
 			break;
 		case 2:
-			if (comicKuaiDiFragment == null) {
-				comicKuaiDiFragment = new ComicKuaiDiFragment();
-				transaction.add(R.id.content_frame, comicKuaiDiFragment);
+			if (newComicFragment == null) {
+				newComicFragment = new NewComicFragment();
+				transaction.add(R.id.content_frame, newComicFragment);
 			} else {
-				transaction.show(comicKuaiDiFragment);
+				transaction.show(newComicFragment);
 			}
 			break;
 		case 3:
@@ -219,8 +221,8 @@ public class MainActivity extends Activity {
 		if (hotComicFragment != null) {
 			transaction.hide(hotComicFragment);
 		}
-		if (comicKuaiDiFragment != null) {
-			transaction.hide(comicKuaiDiFragment);
+		if (newComicFragment != null) {
+			transaction.hide(newComicFragment);
 		}
 		if (myFavorFragment != null) {
 			transaction.hide(myFavorFragment);

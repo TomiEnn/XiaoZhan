@@ -13,6 +13,12 @@
     <color name="holo_gray_3">#e5e5e5</color>
     <color name="holo_gray_4">#dcdcdc</color>
     <color name="holo_gray_5">#c9c9c9</color>
+    <color name="text_color_1">#a3a2a2</color>
+    <color name="text_color_2">#959595</color>
+    <color name="text_color_3">#898989</color>
+    <color name="text_color_4">#707070</color>
+    <color name="text_color_5">#626262</color>
+    <color name="text_color_6">#313131</color>
     
     <color name="holo_blue_light">#ff33b5e5</color>
     <color name="holo_green_light">#ff99cc00</color>

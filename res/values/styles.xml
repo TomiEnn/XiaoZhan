@@ -38,5 +38,28 @@
     <style name="AppDropDownListViewStyle" parent="@style/Widget.AppCompat.ListView.DropDown">
         <item name="android:listSelector">@drawable/common_list_selector</item>
     </style>
-
+	
+    <style name="textview_white_radius">
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:background">@drawable/common_white_radius_nor</item>
+    </style>
+    
+     <style name="newcomic_view">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/holo_gray_3</item>
+    </style>
+    
+      <style name="common_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">暂无</item>
+        <item name="android:textColor">@color/text_color_5</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    
 </resources>

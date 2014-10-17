@@ -45,7 +45,8 @@
                 android:maxLines="2"
                 android:gravity="center_vertical"
                 android:text="东京食尸鬼"
-                android:textSize="22sp" />
+                android:textColor="@color/text_color_5"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -53,11 +54,13 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal" >
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                <ImageView
+                    android:id="@+id/common_list_button"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:layout_margin="5dp"
-                    android:background="@drawable/shou_button_userpic" />
+                    android:clickable="false"
+                    android:background="@drawable/detail_icon_time" />
 
                 <TextView
                     android:id="@+id/common_list_name"
@@ -66,8 +69,9 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
+                    android:textColor="@color/text_color_5"
                     android:text="Tomi_Enn"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
         </LinearLayout>

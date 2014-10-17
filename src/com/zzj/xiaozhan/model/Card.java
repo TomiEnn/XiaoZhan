@@ -6,9 +6,7 @@ import java.util.List;
  * 卡片布局中的内容
  */
 public class Card {
-	
 
-	
 	/**
 	 * 图片的地址
 	 */
@@ -25,8 +23,22 @@ public class Card {
 	 * 文章的内容
 	 */
 	private String content;
-	
+	/**
+	 * 跳转链接地址
+	 */
 	private String webUrl;
+	/**
+	 * 额外的内容
+	 */
+	private String more;
+
+	public String getMore() {
+		return more;
+	}
+
+	public void setMore(String more) {
+		this.more = more;
+	}
 
 	public String getWebUrl() {
 		return webUrl;

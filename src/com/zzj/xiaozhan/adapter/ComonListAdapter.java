@@ -74,12 +74,12 @@ public class ComonListAdapter extends BaseAdapter {
 				.findViewById(R.id.common_list_title);
 		viewHolder.name = (TextView) convertView
 				.findViewById(R.id.common_list_name);
-		// viewHolder.image.setDefaultImageResId(R.drawable.fab_gradient);
+		 viewHolder.image.setDefaultImageResId(R.drawable.icon_no_image);
 		viewHolder.image.setImageUrl(datas.get(position).getImageUrl(),
 				imageLoader);
-		// viewHolder.image.setErrorImageResId(R.drawable.fab_gradient);
-		viewHolder.title.setText(datas.get(position).getTitle());
-		// viewHolder.name.setText(datas.get(position).getName());
+		 viewHolder.image.setErrorImageResId(R.drawable.icon_no_data);
+		//viewHolder.title.setText(datas.get(position).getTitle());
+		 viewHolder.name.setText(datas.get(position).getName());
 
 		return convertView;
 	}

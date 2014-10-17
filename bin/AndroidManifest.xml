@@ -34,6 +34,8 @@
         </activity>
         <activity android:name="com.zzj.xiaozhan.activity.HotComicDetailActivity" >
         </activity>
+          <activity android:name="com.zzj.xiaozhan.activity.NewComicDetailActivity" >
+        </activity>
     </application>
 
 </manifest>

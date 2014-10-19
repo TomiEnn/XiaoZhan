@@ -21,6 +21,37 @@ public class Video {
 	 * 发布时间
 	 */
 	public String time;
+	/**
+	 * 视屏网络地址
+	 */
+	public String videoUrl;
+	/**
+	 * 解析后播放地址
+	 */
+	public String playVideoUrl;
+	/**
+	 * 文件大小
+	 */
+	private String size;
+	
+	public String getPlayVideoUrl() {
+		return playVideoUrl;
+	}
+	public void setPlayVideoUrl(String playVideoUrl) {
+		this.playVideoUrl = playVideoUrl;
+	}
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+	}
 	public String getNumber() {
 		return number;
 	}

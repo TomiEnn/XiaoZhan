@@ -39,5 +39,10 @@
     <color name="unfollow_button_stroke">#ffe5e5e5</color>
     <color name="follow_button_clicked">#ffe5ab1e</color>
     <color name="follow_button_nor">#ffffbe21</color>
+     <color name="media_controller_bg">#df131314</color>
+      <color name="gray_corners_rect">#ffbbbbbb</color>
+       <color name="bkgd_gray">#ffa5a5a5</color>
+        <color name="underline_color">#99444444</color>
+    <color name="bkgd_gray_light">#ffbababa</color>
     
 </resources>

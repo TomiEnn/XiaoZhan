@@ -62,4 +62,30 @@
         <item name="android:textSize">15sp</item>
     </style>
     
+        <style name="PlayerControlBarButton">
+        <item name="android:background">@drawable/media_control_item_background</item>
+        <item name="android:focusable">true</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+    
+          <style name="Widget.App.Seekbar.Pink" parent="@android:attr/progressBarStyleHorizontal">
+        <item name="android:progressDrawable">@drawable/abcp_pink_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:thumb">@drawable/bili_player_seekbar_thumb</item>
+        <item name="android:thumbOffset">1dp</item>
+    </style>
+    
+           <style name="CommonUnderline">
+        <item name="android:background">@color/underline_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+    
+             <style name="PlayerControlBarButtonWithText" parent="@style/PlayerControlBarButton">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:drawablePadding">4dp</item>
+    </style>
+    
 </resources>

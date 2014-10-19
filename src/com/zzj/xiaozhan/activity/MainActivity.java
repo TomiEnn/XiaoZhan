@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
 	 */
 	public void toLogin(View view){
 		
-		Intent intent = new Intent(MainActivity.this, UserInformation.class);
+		Intent intent = new Intent(MainActivity.this, VideoActivity.class);
 		startActivity(intent);
 		
 	}

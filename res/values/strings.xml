@@ -8,5 +8,5 @@
     <string name="icon_search">搜索</string>
     <string name="drawer_open">展开导航</string>
     <string name="drawer_close">收缩导航</string>
-
+	<string name="video_buffering">视频解析中…</string>
 </resources>

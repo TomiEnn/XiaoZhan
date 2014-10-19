@@ -8,6 +8,7 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -34,7 +35,20 @@
         </activity>
         <activity android:name="com.zzj.xiaozhan.activity.HotComicDetailActivity" >
         </activity>
-          <activity android:name="com.zzj.xiaozhan.activity.NewComicDetailActivity" >
+        <activity
+            android:name="com.zzj.xiaozhan.activity.VideoActivity"
+            android:process=":vitamio"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity android:name="com.zzj.xiaozhan.activity.NewComicDetailActivity" >
+        </activity>
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
     </application>
 

@@ -8,6 +8,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import zrc.widget.SimpleFooter;
+import zrc.widget.SimpleHeader;
+import zrc.widget.ZrcListView;
+import zrc.widget.ZrcListView.OnStartListener;
+
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,13 +44,13 @@ import com.zzj.xiaozhan.utils.Constants;
 import com.zzj.xiaozhan.utils.LogUtil;
 import com.zzj.xiaozhan.volley.AppStringRequest;
 
-public class NewComicFragment extends Fragment implements OnRefreshListener,
-		OnItemClickListener {
+public class NewComicFragment extends Fragment implements OnStartListener,
+		zrc.widget.ZrcListView.OnItemClickListener {
 
 	// 刷新控件
 	private SwipeRefreshLayout swipeLayout;
+	private ZrcListView zrcListview;
 	private List<Card> datas = new ArrayList<Card>();
-	private ListView listView;
 	private NewComicListAdapter adapter;
 	private Card card;
 	private long startTime;
@@ -58,23 +63,55 @@ public class NewComicFragment extends Fragment implements OnRefreshListener,
 		// TODO Auto-generated method stub
 		View view = inflater.inflate(R.layout.newcomic_fragment, null, false);
 		// listview布局
-		listView = (ListView) view.findViewById(R.id.new_listview);
+		zrcListview = (ZrcListView) view.findViewById(R.id.new_swipe_container);
 		adapter = new NewComicListAdapter(getActivity(), datas);
-		listView.setAdapter(adapter);
-		listView.setDivider(null);
-		listView.setOnItemClickListener(this);
-		// 下拉刷新
-		swipeLayout = (SwipeRefreshLayout) view
-				.findViewById(R.id.new_swipe_container);
-		swipeLayout.setColorScheme(android.R.color.holo_blue_bright,
-				android.R.color.holo_green_light,
-				android.R.color.holo_orange_light,
-				android.R.color.holo_red_light);
-		swipeLayout.setOnRefreshListener(this);
-		// 获取数据
-		// getDatas();
-		loadDatas(Constants.NEW_COMIC_WEB);
+
+
+		// 设置下拉刷新的样式
+		SimpleHeader header = new SimpleHeader(getActivity());
+		header.setTextColor(0xff0066aa);
+		header.setCircleColor(0xff33bbee);
+		zrcListview.setHeadable(header);
+		// 设置加载更多的样式
+		SimpleFooter footer = new SimpleFooter(getActivity());
+		footer.setCircleColor(0xff33bbee);
+		zrcListview.setFootable(footer);
+
+		// 设置列表项出现动画
+		zrcListview.setItemAnimForTopIn(R.anim.topitem_in);
+		zrcListview.setItemAnimForBottomIn(R.anim.bottomitem_in);
+		// 下拉刷新事件回调
+		zrcListview.setOnRefreshStartListener(new OnStartListener() {
+			@Override
+			public void onStart() {
+				refresh();
+			}
+		});
+
+		// 加载更多事件回调
+		zrcListview.setOnLoadMoreStartListener(new OnStartListener() {
+			@Override
+			public void onStart() {
+				loadMore();
+			}
+		});
+
+		zrcListview.setAdapter(adapter);
+		zrcListview.setDivider(null);
+		zrcListview.setOnItemClickListener(this);
+		zrcListview.refresh();
+		
 		return view;
+	}
+
+	protected void loadMore() {
+		// TODO Auto-generated method stub
+
+	}
+
+	protected void refresh() {
+		// TODO Auto-generated method stub
+		loadDatas(Constants.NEW_COMIC_WEB);
 	}
 
 	/**
@@ -126,7 +163,7 @@ public class NewComicFragment extends Fragment implements OnRefreshListener,
 								LogUtil.i("拉数据", " 标题： " + title);
 								LogUtil.i("拉数据", " 封面地址： " + imageUrl);
 								LogUtil.i("拉数据", " 日期： " + time);
-								
+
 								// 将数据存储到datas里，并刷新adapter
 								card = new Card();
 								card.setTitle(title);
@@ -134,9 +171,12 @@ public class NewComicFragment extends Fragment implements OnRefreshListener,
 								card.setMore(time);
 								card.setWebUrl(url);
 								datas.add(card);
-								
+
 							}
 							adapter.notifyDataSetChanged();
+							zrcListview.setRefreshSuccess("加载成功");
+							// 开启加载更多功能
+							zrcListview.startLoadMore();
 							endTime = System.currentTimeMillis();
 						}
 
@@ -148,46 +188,33 @@ public class NewComicFragment extends Fragment implements OnRefreshListener,
 						// TODO Auto-generated method stub
 						LogUtil.i("拉数据", "解析错误");
 						LogUtil.i("拉数据", e.getMessage());
+						zrcListview.setRefreshFail("加载失败");
 					}
 				});
 		queue.add(request);
 
 	}
 
-	/**
-	 * 刷新响应
+	/*
+	 * @Override public void onRefresh() { // TODO Auto-generated method stub
+	 * startTime = System.currentTimeMillis();
+	 * loadDatas(Constants.NEW_COMIC_WEB); costlTime = endTime - startTime; if
+	 * (costlTime < 1500) { costlTime = 1500; } new Handler().postDelayed(new
+	 * Runnable() {
+	 * 
+	 * @Override public void run() { // TODO Auto-generated method stub
+	 * swipeLayout.setRefreshing(false);
+	 * 
+	 * } }, costlTime); }
 	 */
-	@Override
-	public void onRefresh() {
-		// TODO Auto-generated method stub
-		startTime = System.currentTimeMillis();
-		loadDatas(Constants.NEW_COMIC_WEB);
-		costlTime = endTime - startTime;
-		if (costlTime < 1500) {
-			costlTime = 1500;
-		}
-		new Handler().postDelayed(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				swipeLayout.setRefreshing(false);
-
-			}
-		}, costlTime);
-	}
 
 	/**
 	 * listView点击事件
 	 */
+
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
+	public void onItemClick(ZrcListView parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
-
-		// HotComicDetailActivity.actionStart(this,
-		// datas.get(position).getTitle(), datas.get(position).getWebUrl());
-
 		Intent intent = new Intent(getActivity(), NewComicDetailActivity.class);
 		intent.putExtra("title", datas.get(position).getTitle());
 		intent.putExtra("webUrl", datas.get(position).getWebUrl());
@@ -195,6 +222,5 @@ public class NewComicFragment extends Fragment implements OnRefreshListener,
 		startActivity(intent);
 
 	}
-	
-	
+
 }

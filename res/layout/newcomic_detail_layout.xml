@@ -70,7 +70,8 @@
             android:id="@+id/newcomic_detail_listview"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             ></com.zzj.xiaozhan.utils.NoScrollListView>
         </LinearLayout>
     </ScrollView>

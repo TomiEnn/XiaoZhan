@@ -19,9 +19,11 @@
         <LinearLayout
             android:id="@+id/shou_image_llayout"
             android:layout_width="fill_parent"
-            android:layout_height="150dp" >
+            android:layout_height="150dp" 
+            android:visibility="visible"
+            >
 
-            <ImageView
+            <com.android.volley.toolbox.NetworkImageView
                 android:id="@+id/shou_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -43,7 +45,7 @@
                 android:maxLines="2"
                 android:maxWidth="150dp"
                 android:paddingTop="5dp"
-                android:text="东京食尸鬼"
+                android:text="匿了"
                 android:textSize="22sp" />
 
             <Button
@@ -67,8 +69,8 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp" >
 
-            <Button
-                android:id="@+id/shou_button_userpic"
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/shou_image_userpic"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/shou_button_userpic" />
@@ -78,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Tomi_Enn"
+                android:text="暂无"
                 android:textColor="@color/common_list_item"
                 android:textSize="18sp" />
         </LinearLayout>

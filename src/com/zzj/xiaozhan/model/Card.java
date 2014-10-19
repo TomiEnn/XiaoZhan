@@ -16,6 +16,10 @@ public class Card {
 	 */
 	private String name;
 	/**
+	 * 发布人的头像
+	 */
+	private String userImageUrl;
+	/**
 	 * 文章的标题
 	 */
 	private String title;
@@ -31,6 +35,14 @@ public class Card {
 	 * 额外的内容
 	 */
 	private String more;
+	
+	public String getUserImageUrl() {
+		return userImageUrl;
+	}
+
+	public void setUserImageUrl(String userImageUrl) {
+		this.userImageUrl = userImageUrl;
+	}
 
 	public String getMore() {
 		return more;

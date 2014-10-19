@@ -1115,17 +1115,17 @@ containing a value of this type.
         public static final int action_context_bar=0x7f09001d;
         public static final int action_menu_divider=0x7f090016;
         public static final int action_menu_presenter=0x7f090017;
-        public static final int action_message=0x7f090080;
+        public static final int action_message=0x7f09007f;
         public static final int action_mode_close_button=0x7f090024;
-        public static final int action_search=0x7f09007f;
+        public static final int action_search=0x7f09007e;
         public static final int activity_chooser_view_content=0x7f090025;
         public static final int always=0x7f09000b;
         public static final int beginning=0x7f090011;
         public static final int bottom=0x7f09005f;
         public static final int bottom_controllers_group=0x7f090061;
-        public static final int buffering_group=0x7f09007c;
-        public static final int buffering_text=0x7f09007d;
-        public static final int buffering_view=0x7f09007e;
+        public static final int buffering_group=0x7f09007b;
+        public static final int buffering_text=0x7f09007c;
+        public static final int buffering_view=0x7f09007d;
         public static final int checkbox=0x7f09002d;
         public static final int collapseActionView=0x7f09000d;
         public static final int command_and_dianzan=0x7f090074;
@@ -1141,7 +1141,7 @@ containing a value of this type.
         public static final int common_list_title=0x7f090050;
         public static final int content_frame=0x7f09003d;
         public static final int content_ll=0x7f090072;
-        public static final int controller_root=0x7f09007b;
+        public static final int controller_root=0x7f09007a;
         public static final int date_time=0x7f09005c;
         public static final int default_activity_button=0x7f090028;
         public static final int dialog=0x7f09000e;
@@ -1203,14 +1203,13 @@ containing a value of this type.
         public static final int search_voice_btn=0x7f09003b;
         public static final int shortcut=0x7f09002e;
         public static final int shou_button_collect=0x7f09004a;
-        public static final int shou_button_userpic=0x7f09004b;
         public static final int shou_image_llayout=0x7f090047;
+        public static final int shou_image_userpic=0x7f09004b;
         public static final int shou_imageview=0x7f090048;
-        public static final int shou_listview_content=0x7f090079;
-        public static final int shou_swipe_container=0x7f090078;
         public static final int shou_text_content=0x7f09004d;
         public static final int shou_text_title=0x7f090049;
         public static final int shou_text_username=0x7f09004c;
+        public static final int shouye_swipe_listview=0x7f090078;
         public static final int showCustom=0x7f090007;
         public static final int showHome=0x7f090004;
         public static final int showTitle=0x7f090006;
@@ -1232,7 +1231,7 @@ containing a value of this type.
         public static final int video_number=0x7f090053;
         public static final int video_time=0x7f090055;
         public static final int video_title=0x7f090054;
-        public static final int video_view=0x7f09007a;
+        public static final int video_view=0x7f090079;
         public static final int withText=0x7f09000c;
     }
     public static final class integer {

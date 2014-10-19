@@ -48,7 +48,6 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		zrc.widget.ZrcListView.OnItemClickListener {
 
 	// 刷新控件
-	private SwipeRefreshLayout swipeLayout;
 	private ZrcListView zrcListview;
 	private List<Card> datas = new ArrayList<Card>();
 	private NewComicListAdapter adapter;
@@ -65,7 +64,6 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		// listview布局
 		zrcListview = (ZrcListView) view.findViewById(R.id.new_swipe_container);
 		adapter = new NewComicListAdapter(getActivity(), datas);
-
 
 		// 设置下拉刷新的样式
 		SimpleHeader header = new SimpleHeader(getActivity());
@@ -100,7 +98,7 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		zrcListview.setDivider(null);
 		zrcListview.setOnItemClickListener(this);
 		zrcListview.refresh();
-		
+
 		return view;
 	}
 
@@ -109,9 +107,38 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 
 	}
 
+	/*
+	 * @Override public void onRefresh() { // TODO Auto-generated method stub
+	 * startTime = System.currentTimeMillis();
+	 * loadDatas(Constants.NEW_COMIC_WEB); costlTime = endTime - startTime; if
+	 * (costlTime < 1500) { costlTime = 1500; } new Handler().postDelayed(new
+	 * Runnable() {
+	 * 
+	 * @Override public void run() { // TODO Auto-generated method stub
+	 * swipeLayout.setRefreshing(false);
+	 * 
+	 * } }, costlTime); }
+	 */
+
 	protected void refresh() {
 		// TODO Auto-generated method stub
+		startTime = System.currentTimeMillis();
 		loadDatas(Constants.NEW_COMIC_WEB);
+		costlTime = endTime - startTime;
+		if (costlTime < 1500) {
+			costlTime = 1500;
+		}
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() { // TODO Auto-generated method stub
+				adapter.notifyDataSetChanged();
+				zrcListview.setRefreshSuccess("加载成功");
+				// 开启加载更多功能
+				zrcListview.startLoadMore();
+
+			}
+		}, costlTime);
 	}
 
 	/**
@@ -174,9 +201,6 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 
 							}
 							adapter.notifyDataSetChanged();
-							zrcListview.setRefreshSuccess("加载成功");
-							// 开启加载更多功能
-							zrcListview.startLoadMore();
 							endTime = System.currentTimeMillis();
 						}
 
@@ -194,19 +218,6 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		queue.add(request);
 
 	}
-
-	/*
-	 * @Override public void onRefresh() { // TODO Auto-generated method stub
-	 * startTime = System.currentTimeMillis();
-	 * loadDatas(Constants.NEW_COMIC_WEB); costlTime = endTime - startTime; if
-	 * (costlTime < 1500) { costlTime = 1500; } new Handler().postDelayed(new
-	 * Runnable() {
-	 * 
-	 * @Override public void run() { // TODO Auto-generated method stub
-	 * swipeLayout.setRefreshing(false);
-	 * 
-	 * } }, costlTime); }
-	 */
 
 	/**
 	 * listView点击事件

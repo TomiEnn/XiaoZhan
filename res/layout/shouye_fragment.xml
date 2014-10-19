@@ -4,20 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/shou_swipe_container"
+    <zrc.widget.ZrcListView
+        android:id="@+id/shouye_swipe_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/holo_gray_3" >
-
-        <ListView
-            android:id="@+id/shou_listview_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:choiceMode="singleChoice"
-            android:dividerHeight="0px" >
-            
-        </ListView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </zrc.widget.ZrcListView>
 
 </LinearLayout>

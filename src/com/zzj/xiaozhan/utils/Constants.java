@@ -10,6 +10,10 @@ public class Constants {
 	 */
 	public final static String HOT_WEB = "http://www.xiaozhan.cc";
 	/**
+	 * 爱偷闲的地址
+	 */
+	public final static String I_TOU_XIAN = "http://www.itouxian.com/";
+	/**
 	 * 新番动漫的地址
 	 */
 	public final static String NEW_COMIC_WEB = "http://www.xiaozhan.cc/anime";

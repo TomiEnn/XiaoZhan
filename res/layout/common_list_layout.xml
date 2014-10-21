@@ -12,13 +12,14 @@
         android:layout_marginRight="12dp"
         android:layout_marginTop="10dp"
          android:background="@drawable/listview_selector"
-        android:descendantFocusability="blocksDescendants"
+       
         android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="3dp"
+             android:descendantFocusability="blocksDescendants"
             android:layout_weight="1" >
 
             <com.android.volley.toolbox.NetworkImageView
@@ -33,6 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="2"
+            android:descendantFocusability="blocksDescendants"
             android:orientation="vertical" >
 
             <TextView

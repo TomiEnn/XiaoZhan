@@ -22,8 +22,13 @@ import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.android.volley.Request;
@@ -42,6 +47,7 @@ import com.zzj.xiaozhan.adapter.NewComicListAdapter;
 import com.zzj.xiaozhan.model.Card;
 import com.zzj.xiaozhan.utils.Constants;
 import com.zzj.xiaozhan.utils.LogUtil;
+import com.zzj.xiaozhan.utils.NetworkUtil;
 import com.zzj.xiaozhan.volley.AppStringRequest;
 
 public class NewComicFragment extends Fragment implements OnStartListener,
@@ -55,6 +61,10 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 	private long startTime;
 	private long endTime;
 	private long costlTime;
+	private ProgressBar loadinProgress;
+	private RelativeLayout loadingLayout;
+	private RelativeLayout errorLayout;
+	private LinearLayout networkLoading;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,6 +73,11 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		View view = inflater.inflate(R.layout.newcomic_fragment, null, false);
 		// listview布局
 		zrcListview = (ZrcListView) view.findViewById(R.id.new_swipe_container);
+		loadinProgress = (ProgressBar) view.findViewById(R.id.progressbar_loading);		
+		loadingLayout = (RelativeLayout) view.findViewById(R.id.loading_container);
+		errorLayout = (RelativeLayout) view.findViewById(R.id.network_error_container);
+		networkLoading = (LinearLayout) view.findViewById(R.id.network_and_loading);
+		
 		adapter = new NewComicListAdapter(getActivity(), datas);
 
 		// 设置下拉刷新的样式
@@ -97,11 +112,52 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		zrcListview.setAdapter(adapter);
 		zrcListview.setDivider(null);
 		zrcListview.setOnItemClickListener(this);
-		zrcListview.refresh();
+		 //判断网络状态
+		 networkStates();
 
 		return view;
 	}
-
+	/**
+	 * 判断网络状态
+	 */
+	private void networkStates() {
+		// TODO Auto-generated method stub
+		if(NetworkUtil.isConnected(getActivity())){
+			//加载数据
+			loadingLayout.setVisibility(View.VISIBLE);
+			loadinProgress.setVisibility(View.VISIBLE);
+			loadDatas(Constants.NEW_COMIC_WEB);
+			enableNetworkErrorView(false);
+		}else{
+			loadingLayout.setVisibility(View.GONE);
+			loadinProgress.setVisibility(View.GONE);
+			//开启无网络图
+			enableNetworkErrorView(true);
+		}
+	}
+	
+	
+	private void enableNetworkErrorView(boolean networkAvailable) {
+		// TODO Auto-generated method stub
+		if(networkAvailable){
+			errorLayout.setVisibility(View.VISIBLE);
+			Button tryButton = (Button) errorLayout
+					.findViewById(R.id.try_button);
+			tryButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					
+					refresh();
+				}
+			});
+		}else{
+			errorLayout.setVisibility(View.GONE);
+		}
+		
+	}
+	
+	
+	
 	protected void loadMore() {
 		// TODO Auto-generated method stub
 
@@ -128,7 +184,7 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 		if (costlTime < 1500) {
 			costlTime = 1500;
 		}
-		new Handler().postDelayed(new Runnable() {
+		/*new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() { // TODO Auto-generated method stub
@@ -138,7 +194,7 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 				zrcListview.startLoadMore();
 
 			}
-		}, costlTime);
+		}, costlTime);*/
 	}
 
 	/**
@@ -201,7 +257,13 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 
 							}
 							adapter.notifyDataSetChanged();
+							zrcListview.setRefreshSuccess("加载成功");
+							// 开启加载更多功能
+							zrcListview.startLoadMore();
 							endTime = System.currentTimeMillis();
+							networkLoading.setVisibility(View.GONE);
+							loadingLayout.setVisibility(View.GONE);
+							loadinProgress.setVisibility(View.GONE);
 						}
 
 					}
@@ -213,6 +275,7 @@ public class NewComicFragment extends Fragment implements OnStartListener,
 						LogUtil.i("拉数据", "解析错误");
 						LogUtil.i("拉数据", e.getMessage());
 						zrcListview.setRefreshFail("加载失败");
+						enableNetworkErrorView(true);
 					}
 				});
 		queue.add(request);

@@ -25,6 +25,7 @@ import com.zzj.xiaozhan.adapter.ShouYeAdapter;
 import com.zzj.xiaozhan.model.Card;
 import com.zzj.xiaozhan.utils.Constants;
 import com.zzj.xiaozhan.utils.LogUtil;
+import com.zzj.xiaozhan.utils.NetworkUtil;
 import com.zzj.xiaozhan.volley.AppStringRequest;
 
 import android.app.Fragment;
@@ -36,7 +37,12 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -51,7 +57,11 @@ public class ShouYeFragment extends Fragment implements
 	private long startTime;
 	private long endTime;
 	private long costlTime;
-	private ProgressDialog progressDialog;
+	private ProgressBar loadinProgress;
+	private RelativeLayout loadingLayout;
+	private RelativeLayout errorLayout;
+	private LinearLayout networkLoading;
+	private int page = 1; 
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,6 +71,10 @@ public class ShouYeFragment extends Fragment implements
 		// zrcListview布局
 		zrcListview = (ZrcListView) view
 				.findViewById(R.id.shouye_swipe_listview);
+		loadinProgress = (ProgressBar) view.findViewById(R.id.progressbar_loading);		
+		loadingLayout = (RelativeLayout) view.findViewById(R.id.loading_container);
+		errorLayout = (RelativeLayout) view.findViewById(R.id.network_error_container);
+		networkLoading = (LinearLayout) view.findViewById(R.id.network_and_loading);
 		adapter = new ShouYeAdapter(getActivity(), datas);
 
 		// 设置下拉刷新的样式
@@ -95,13 +109,52 @@ public class ShouYeFragment extends Fragment implements
 		 zrcListview.setAdapter(adapter);
 		 zrcListview.setDivider(null);
 		 zrcListview.setOnItemClickListener(this);
-		 zrcListview.refresh();
+		 //判断网络状态
+		 networkStates();
 		return view;
 	}
-
+	/**
+	 * 判断网络状态
+	 */
+	private void networkStates() {
+		// TODO Auto-generated method stub
+		if(NetworkUtil.isConnected(getActivity())){
+			//加载数据
+			loadingLayout.setVisibility(View.VISIBLE);
+			loadinProgress.setVisibility(View.VISIBLE);
+			loadDatas(Constants.I_TOU_XIAN);
+			enableNetworkErrorView(false);
+		}else{
+			loadingLayout.setVisibility(View.GONE);
+			loadinProgress.setVisibility(View.GONE);
+			//开启无网络图
+			enableNetworkErrorView(true);
+		}
+	}
+	
+	
+	private void enableNetworkErrorView(boolean networkAvailable) {
+		// TODO Auto-generated method stub
+		if(networkAvailable){
+			errorLayout.setVisibility(View.VISIBLE);
+			Button tryButton = (Button) errorLayout
+					.findViewById(R.id.try_button);
+			tryButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					
+					refresh();
+				}
+			});
+		}else{
+			errorLayout.setVisibility(View.GONE);
+		}
+		
+	}
 	protected void loadMore() {
 		// TODO Auto-generated method stub
-
+		page++;
+		loadDatas(Constants.I_TOU_XIAN + "?page="+page);
 	}
 
 	/**
@@ -109,23 +162,22 @@ public class ShouYeFragment extends Fragment implements
 	 */
 	protected void refresh() {
 		// TODO Auto-generated method stub
+		//清除所有数据
+		datas.clear();
 		startTime = System.currentTimeMillis();
 		loadDatas(Constants.I_TOU_XIAN);
 		costlTime = endTime - startTime;
 		if (costlTime < 1500) {
 			costlTime = 1500;
 		}
-		new Handler().postDelayed(new Runnable() {
+		/*new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() { // TODO Auto-generated method stub
 				
-				zrcListview.setRefreshSuccess("加载成功");
-				// 开启加载更多功能
-				zrcListview.startLoadMore();
 
 			}
-		}, costlTime);
+		}, costlTime);*/
 	}
 
 
@@ -137,6 +189,7 @@ public class ShouYeFragment extends Fragment implements
 	 */
 	public void loadDatas(String url) {
 		LogUtil.i("拉数据", "执行了loadDatas方法");
+		
 		RequestQueue queue = Volley.newRequestQueue(getActivity());
 		AppStringRequest request = new AppStringRequest(Request.Method.POST,
 				url, new Listener<String>() {
@@ -144,6 +197,7 @@ public class ShouYeFragment extends Fragment implements
 					@Override
 					public void onResponse(String html) {
 						// TODO Auto-generated method stub
+						
 						try{
 						
 						Document doc = Jsoup.parse(html);
@@ -190,6 +244,7 @@ public class ShouYeFragment extends Fragment implements
 									String name = elementA.text();
 									// 时间(需要再次转化去掉文字)
 									String time = elementTitle.text();
+									
 									// 标题
 									String title;
 									if (elementTitle.getElementsByTag("h1")
@@ -223,8 +278,13 @@ public class ShouYeFragment extends Fragment implements
 								
 							}
 							adapter.notifyDataSetChanged();
+							zrcListview.setRefreshSuccess("加载成功");
+							// 开启加载更多功能
+							zrcListview.startLoadMore();
 							endTime = System.currentTimeMillis();
-
+							networkLoading.setVisibility(View.GONE);
+							loadingLayout.setVisibility(View.GONE);
+							loadinProgress.setVisibility(View.GONE);
 						}
 						}catch(Exception e){
 							LogUtil.i("首页拉数据3", "Exception： " + e.getMessage());
@@ -240,6 +300,7 @@ public class ShouYeFragment extends Fragment implements
 						LogUtil.i("首页拉数据", "解析错误");
 						LogUtil.i("首页拉数据", e.getMessage());
 						// zrcListview.setRefreshFail("加载失败");
+						enableNetworkErrorView(true);
 					}
 				});
 		queue.add(request);
@@ -264,26 +325,7 @@ public class ShouYeFragment extends Fragment implements
 	 * 
 	 * }
 	 */
-	/**
-	 * 显示进度的对话框
-	 */
-	private void showProgressDialog() {
-		if (progressDialog == null) {
-			progressDialog = new ProgressDialog(getActivity());
-			progressDialog.setMessage("正在加载...");
-			progressDialog.setCanceledOnTouchOutside(false);
-		}
-		progressDialog.show();
-	}
-
-	/**
-	 * 关闭进度的对话框
-	 */
-	private void closeProgressDialog() {
-		if (progressDialog != null) {
-			progressDialog.dismiss();
-		}
-	}
+	
 
 	
 	

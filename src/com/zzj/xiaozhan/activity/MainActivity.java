@@ -1,5 +1,8 @@
 package com.zzj.xiaozhan.activity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.zzj.xiaozhan.R;
 import com.zzj.xiaozhan.R.array;
 import com.zzj.xiaozhan.R.drawable;
@@ -24,6 +27,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +36,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -57,6 +62,10 @@ public class MainActivity extends Activity {
 	 * 用于对Fragment进行管理
 	 */
 	private FragmentManager fragmentManager;
+	/**
+	 * 是否退出的标示
+	 */
+	private boolean isExit = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +95,7 @@ public class MainActivity extends Activity {
 			/** 当drawer处于完全关闭的状态时调用 */
 			public void onDrawerClosed(View drawerView) {
 				super.onDrawerClosed(drawerView);
-				getActionBar().setTitle(mTitle);
+				//getActionBar().setTitle(mTitle);
 				invalidateOptionsMenu(); // 创建对onPrepareOptionsMenu()的调用
 			}
 
@@ -244,7 +253,7 @@ public class MainActivity extends Activity {
 	 */
 	public void toLogin(View view){
 		
-		Intent intent = new Intent(MainActivity.this, VideoActivity.class);
+		Intent intent = new Intent(MainActivity.this, UserInformation.class);
 		startActivity(intent);
 		
 	}
@@ -260,4 +269,31 @@ public class MainActivity extends Activity {
 
 	}
 
+	/**
+	 * 双击退出
+	 */
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			Timer timer;
+			if (!isExit) {
+				isExit = true;
+				Toast.makeText(this, "再按一下退出", Toast.LENGTH_SHORT).show();
+				timer = new Timer();
+				timer.schedule(new TimerTask() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						isExit = false;
+					}
+				}, 1500);
+			} else {
+				android.os.Process.killProcess(android.os.Process.myPid());
+				System.exit(0);
+			}
+		}
+		return false;
+	}
 }

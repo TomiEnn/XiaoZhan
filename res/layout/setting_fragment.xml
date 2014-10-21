@@ -3,12 +3,164 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+    <LinearLayout
+        android:background="@drawable/common_list_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号设置"
+            android:textColor="@color/text_color_6"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="管理我的账号"
+            android:textColor="@color/holo_gray_5"
+            android:textSize="12sp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+       		android:layout_marginRight="10dp"
+            android:background="@color/holo_gray_5" />
     
 
-    <TextView 
-        android:layout_width="wrap_content"
+    <LinearLayout
+         android:background="@drawable/common_list_selector"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="设置页"
-        />
+        android:paddingLeft="25dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知设置"
+            android:textColor="@color/text_color_6"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="管理通知提醒"
+            android:textColor="@color/holo_gray_5"
+            android:textSize="12sp" />
+
+         </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+       		android:layout_marginRight="10dp"
+            android:background="@color/holo_gray_5" />
+   
+
+    <LinearLayout
+        android:background="@drawable/common_list_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:paddingLeft="25dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:clickable="false"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="应用相关"
+            android:textColor="@color/common_red_button_nor"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/common_red_button_nor" />
+
+    <LinearLayout
+        android:background="@drawable/common_list_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="软件更新"
+            android:textColor="@color/text_color_6"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="下载最新版本"
+            android:textColor="@color/holo_gray_5"
+            android:textSize="12sp" />
+ </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+           android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+       		android:layout_marginRight="10dp"
+            android:background="@color/holo_gray_5" />
+   
+
+    <LinearLayout
+        android:background="@drawable/common_list_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于作者"
+            android:textColor="@color/text_color_6"
+            android:textSize="16sp" />
+          </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+       		android:layout_marginRight="10dp"
+            android:background="@color/holo_gray_5" />
+  
+
 </LinearLayout>

@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+      <include
+        android:id="@+id/network_and_loading"
+        layout="@layout/loadinglayout" />
+      
     <zrc.widget.ZrcListView
         android:id="@+id/shouye_swipe_listview"
         android:layout_width="match_parent"

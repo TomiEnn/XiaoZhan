@@ -2,29 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/common_card_llayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_marginLeft="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-         android:background="@drawable/listview_selector"
-        android:descendantFocusability="blocksDescendants"
+        android:background="@drawable/listview_selector"
+        android:clickable="true"
+       
         android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/shou_image_llayout"
             android:layout_width="fill_parent"
-            android:layout_height="150dp" 
-            android:visibility="visible"
-            >
+            android:layout_height="150dp"
+             android:descendantFocusability="blocksDescendants"
+            android:visibility="visible" >
 
             <com.android.volley.toolbox.NetworkImageView
                 android:id="@+id/shou_imageview"
+                style="@drawable/common_cornor_radius"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
@@ -34,6 +35,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+             android:descendantFocusability="blocksDescendants"
             android:padding="10dp" >
 
             <TextView
@@ -42,14 +44,16 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:ellipsize="marquee"
                 android:maxLines="2"
-                android:maxWidth="150dp"
+                android:maxWidth="180dp"
                 android:paddingTop="5dp"
                 android:text="匿了"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/shou_button_collect"
+                style="@drawable/common_cornor_radius"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -66,6 +70,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+             android:descendantFocusability="blocksDescendants"
             android:paddingLeft="10dp"
             android:paddingTop="10dp" >
 

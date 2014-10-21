@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape>
+            <corners android:radius="10dp" />
+        </shape>
+
+        <selector xmlns:android="http://schemas.android.com/apk/res/android" >
+            <item
+                android:drawable="@color/holo_gray_4"
+                android:state_pressed="true"/>
+            <item
+                android:drawable="@color/holo_gray_4"
+                android:state_focused="true"/>
+            <item
+                android:drawable="@color/holo_gray_1"
+                android:state_enabled="false"/>
+            <item android:drawable="@color/holo_gray_1"/>
+        </selector>
+    </item>
+
+</layer-list>

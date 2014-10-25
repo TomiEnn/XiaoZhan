@@ -9,4 +9,7 @@
     <string name="drawer_open">展开导航</string>
     <string name="drawer_close">收缩导航</string>
 	<string name="video_buffering">视频解析中…</string>
+	 <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+     <string name="image_url">Image Url</string>
 </resources>

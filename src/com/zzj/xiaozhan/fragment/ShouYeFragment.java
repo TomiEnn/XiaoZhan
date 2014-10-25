@@ -298,8 +298,10 @@ public class ShouYeFragment extends Fragment implements
 					public void onErrorResponse(VolleyError e) {
 						// TODO Auto-generated method stub
 						LogUtil.i("首页拉数据", "解析错误");
-						LogUtil.i("首页拉数据", e.getMessage());
-						// zrcListview.setRefreshFail("加载失败");
+						//LogUtil.i("首页拉数据", e.getMessage());
+						 zrcListview.setRefreshFail("加载失败");
+						loadingLayout.setVisibility(View.GONE);
+						loadinProgress.setVisibility(View.GONE);
 						enableNetworkErrorView(true);
 					}
 				});

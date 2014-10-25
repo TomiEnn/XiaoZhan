@@ -10,5 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="我的收藏"
+        android:textSize="22sp"
         />
+    
+    
 </LinearLayout>

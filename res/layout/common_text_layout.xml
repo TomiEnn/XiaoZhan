@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/music_title_container"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="15dp" >
+
+  
+            <TextView
+                android:id="@+id/music_detail_title"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:text="暂无"
+                android:ellipsize="marquee"
+                android:maxLines="3"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/music_detail_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:text="无"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+       
+
+</LinearLayout>

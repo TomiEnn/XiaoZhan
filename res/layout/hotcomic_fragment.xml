@@ -3,18 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
     
-	 <android.support.v4.widget.SwipeRefreshLayout
+	   <include
+        android:id="@+id/network_and_loading"
+        layout="@layout/loadinglayout" />
+      
+    
+    <zrc.widget.ZrcListView
         android:id="@+id/hot_swipe_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/holo_gray_3" >
-    
-    <ListView 
-        android:id="@+id/hot_listview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        ></ListView>
- </android.support.v4.widget.SwipeRefreshLayout>
+    </zrc.widget.ZrcListView>
+
 </LinearLayout>

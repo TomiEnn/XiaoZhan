@@ -38,7 +38,6 @@ import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.zzj.xiaozhan.R;
-import com.zzj.xiaozhan.activity.HotComicDetailActivity;
 import com.zzj.xiaozhan.activity.NewComicDetailActivity;
 import com.zzj.xiaozhan.activity.ShouYeDetailActivity;
 import com.zzj.xiaozhan.adapter.ComonCardAdapter;

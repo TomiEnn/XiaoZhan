@@ -10,6 +10,7 @@
     <color name="common_blue_button_cliked">#51879f</color>
     <color name="common_red_button_clicked">#ffcc4c23</color>
     <color name="common_red_button_nor">#ffe85628</color>
+    <color name="layout_default_background">#543946</color>
     <color name="holo_gray_1">#faf7f7</color>
     <color name="holo_gray_2">#f2efef</color>
     <color name="holo_gray_3">#e5e5e5</color>

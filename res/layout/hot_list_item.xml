@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="vertical" >
+    
+
+    <LinearLayout
+            android:id="@+id/hot_image_llayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/listview_selector"
+            android:layout_marginTop="10dp"
+              android:orientation="vertical"
+               android:descendantFocusability="blocksDescendants"
+            >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/hot_imageview"
+                style="@drawable/common_cornor_radius"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="fitXY"
+                android:clickable="false"
+                android:src="@drawable/djsz_1" />
+            
+            
+            <TextView
+                android:id="@+id/hot_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:maxLines="2"
+                android:paddingTop="5dp"
+                android:padding="5dp"
+                android:text="匿了"
+                android:textSize="20sp" />
+            
+        </LinearLayout>
+    
+</LinearLayout>

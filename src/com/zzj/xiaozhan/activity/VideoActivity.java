@@ -102,7 +102,7 @@ public class VideoActivity extends Activity implements OnInfoListener,
 		String webUrl = getIntent().getExtras().getString("playVideoUrl");
 		LogUtil.i("new网络地址", "VideoPlayAvticity 更改后的地址： " + webUrl);
 		// String webUrl =
-		// "http://www.tudou.com/v/-n8XmoKveRw/&autoPlay=true&icode=-n8XmoKveRw&iid=132257582/v.swf";
+		// "http://ear.duomi.com/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.1";
 		if (webUrl != null) {
 			bufferLayout.setVisibility(View.VISIBLE);
 

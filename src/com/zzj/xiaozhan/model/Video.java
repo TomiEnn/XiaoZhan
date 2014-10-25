@@ -1,7 +1,7 @@
 package com.zzj.xiaozhan.model;
 
 /**
- * 视屏类
+ * 视频类
  * 
  * @author Tomi_Enn
  * 

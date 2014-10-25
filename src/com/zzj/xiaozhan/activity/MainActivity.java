@@ -12,7 +12,7 @@ import com.zzj.xiaozhan.R.menu;
 import com.zzj.xiaozhan.R.string;
 import com.zzj.xiaozhan.adapter.DrawerListAdapter;
 import com.zzj.xiaozhan.fragment.ComicKuaiDiFragment;
-import com.zzj.xiaozhan.fragment.HotComicFragment;
+import com.zzj.xiaozhan.fragment.MusicFragment;
 import com.zzj.xiaozhan.fragment.MyFavorFragment;
 import com.zzj.xiaozhan.fragment.NewComicFragment;
 import com.zzj.xiaozhan.fragment.SettingFragment;
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private DrawerListAdapter drawerListAdapter;
-	private HotComicFragment hotComicFragment;
+	private MusicFragment hotComicFragment;
 	private ComicKuaiDiFragment comicKuaiDiFragment;
 	private MyFavorFragment myFavorFragment;
 	private SettingFragment settingFragment;
@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
 			/** 当drawer处于完全关闭的状态时调用 */
 			public void onDrawerClosed(View drawerView) {
 				super.onDrawerClosed(drawerView);
-				//getActionBar().setTitle(mTitle);
+				getActionBar().setTitle(mTitle);
 				invalidateOptionsMenu(); // 创建对onPrepareOptionsMenu()的调用
 			}
 
@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 		//设置默认是首页
 		mDrawerList.setItemChecked(0, true);
 		setFragmentSelection(0);
-		setTitle("首页");
+		getActionBar().setTitle("首页");
 	}
 
 	@Override
@@ -175,7 +175,7 @@ public class MainActivity extends Activity {
 			break;
 		case 1:
 			if (hotComicFragment == null) {
-				hotComicFragment = new HotComicFragment();
+				hotComicFragment = new MusicFragment();
 				transaction.add(R.id.content_frame, hotComicFragment);
 			} else {
 				transaction.show(hotComicFragment);

@@ -34,7 +34,8 @@
             android:name="com.zzj.xiaozhan.activity.ShouYeDetailActivity"
             android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity" >
         </activity>
-        <activity android:name="com.zzj.xiaozhan.activity.HotComicDetailActivity" >
+        <activity android:name="com.zzj.xiaozhan.activity.MusicDetailActivity" 
+            android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity">
         </activity>
         <activity
             android:name="com.zzj.xiaozhan.activity.VideoActivity"
@@ -42,7 +43,10 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
         </activity>
-        <activity android:name="com.zzj.xiaozhan.activity.NewComicDetailActivity" >
+        <activity android:name="com.zzj.xiaozhan.activity.NewComicDetailActivity"
+            android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity" >
+        </activity>
+         <activity android:name="com.zzj.xiaozhan.activity.AudioActivity" >
         </activity>
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"

@@ -13,6 +13,10 @@ public class Constants {
 	 * 爱偷闲的地址
 	 */
 	public final static String I_TOU_XIAN = "http://www.itouxian.com/";
+		/**
+		 * 点记忆的地址
+		 */
+		public final static String DIAN_JIYI = "http://www.dianjiyi.com/";
 	/**
 	 * 新番动漫的地址
 	 */

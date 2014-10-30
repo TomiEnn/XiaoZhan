@@ -4,6 +4,7 @@ import io.vov.vitamio.LibsChecker;
 import io.vov.vitamio.MediaPlayer;
 
 import java.lang.ref.WeakReference;
+import java.util.Random;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
@@ -11,6 +12,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
 import com.zzj.xiaozhan.R;
 import com.zzj.xiaozhan.utils.LogUtil;
+import com.zzj.xiaozhan.utils.MusicUrl;
 import com.zzj.xiaozhan.volley.LruBitmapCache;
 
 import android.app.Activity;
@@ -91,7 +93,10 @@ public class MusicDetailActivity extends Activity {
 		if (!LibsChecker.checkVitamioLibs(this))
 			return;
 		try {
-			path = "http://hcl929.oss-cn-hangzhou.aliyuncs.com/Good%20To%20See%20You.mp3";
+			
+			Random r = new Random();
+			int nextInt = r.nextInt(MusicUrl.musicUrls.length);
+			path = MusicUrl.musicUrls[nextInt];
 			if (path == "") {
 				// Tell the user to provide an audio file URL.
 				Toast.makeText(this, "No Music", Toast.LENGTH_LONG).show();
@@ -105,7 +110,7 @@ public class MusicDetailActivity extends Activity {
 			mMediaPlayer.start();
 
 		} catch (Exception e) {
-			Log.i("music play", "error: " + e.getMessage(), e);
+			//Log.i("music play", "error: " + e.getMessage(), e);
 		}
 		
 	}

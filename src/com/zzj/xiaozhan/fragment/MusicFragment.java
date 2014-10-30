@@ -266,7 +266,7 @@ public class MusicFragment extends Fragment implements zrc.widget.ZrcListView.On
 							loadingLayout.setVisibility(View.GONE);
 							loadinProgress.setVisibility(View.GONE);
 						}catch(Exception e){
-							LogUtil.i("首页拉数据3", "Exception： " + e.getMessage());
+							//LogUtil.i("首页拉数据3", "Exception： " + e.getMessage());
 							Toast.makeText(getActivity(), "服务器异常", Toast.LENGTH_SHORT).show();
 						}
 

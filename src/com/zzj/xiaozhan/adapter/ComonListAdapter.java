@@ -3,6 +3,7 @@ package com.zzj.xiaozhan.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,12 @@ import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
 import com.zzj.xiaozhan.R;
 import com.zzj.xiaozhan.model.Card;
+import com.zzj.xiaozhan.utils.BitmapCache;
 import com.zzj.xiaozhan.volley.LruBitmapCache;
 
 public class ComonListAdapter extends BaseAdapter {
@@ -34,6 +37,8 @@ public class ComonListAdapter extends BaseAdapter {
 		mRequestQueue = Volley.newRequestQueue(context.getApplicationContext());
 		this.imageLoader = new ImageLoader(mRequestQueue, new LruBitmapCache(
 				LruBitmapCache.getCacheSize(context)));
+		//imageLoader = new ImageLoader(mRequestQueue, new BitmapCache());
+		   
 
 	}
 
@@ -58,6 +63,7 @@ public class ComonListAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
+		
 		ViewHolder viewHolder;
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
@@ -74,6 +80,10 @@ public class ComonListAdapter extends BaseAdapter {
 				.findViewById(R.id.common_list_title);
 		viewHolder.name = (TextView) convertView
 				.findViewById(R.id.common_list_name);
+		//ImageListener listener = ImageLoader.getImageListener(viewHolder.image,  
+		//		R.drawable.icon_no_image, R.drawable.icon_no_data);  
+		//imageLoader.get(datas.get(position).getImageUrl(), listener);
+		
 		 viewHolder.image.setDefaultImageResId(R.drawable.icon_no_image);
 		viewHolder.image.setImageUrl(datas.get(position).getImageUrl(),
 				imageLoader);

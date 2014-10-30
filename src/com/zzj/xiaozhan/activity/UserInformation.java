@@ -17,17 +17,5 @@ public class UserInformation extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
-	/**
-	 * 向上导航
-	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    switch (item.getItemId()) {
-	    // 对action bar的Up/Home按钮做出反应
-	    case android.R.id.home:
-	        NavUtils.navigateUpFromSameTask(this);
-	        return true;
-	    }
-	    return super.onOptionsItemSelected(item);
-	}
+
 }

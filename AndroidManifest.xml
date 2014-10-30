@@ -30,6 +30,10 @@
             android:name="com.zzj.xiaozhan.activity.UserInformation"
             android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity" >
         </activity>
+         <activity
+            android:name="com.zzj.xiaozhan.activity.SettingUserActivity"
+            android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity" >
+        </activity>
         <activity
             android:name="com.zzj.xiaozhan.activity.ShouYeDetailActivity"
             android:parentActivityName="com.zzj.xiaozhan.activity.MainActivity" >

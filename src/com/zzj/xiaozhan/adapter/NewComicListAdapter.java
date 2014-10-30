@@ -15,8 +15,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.zzj.xiaozhan.R;
 import com.zzj.xiaozhan.model.Card;
+import com.zzj.xiaozhan.utils.BitmapCache;
 import com.zzj.xiaozhan.volley.LruBitmapCache;
 
 public class NewComicListAdapter extends BaseAdapter {
@@ -35,7 +37,7 @@ public class NewComicListAdapter extends BaseAdapter {
 		mRequestQueue = Volley.newRequestQueue(context.getApplicationContext());
 		this.imageLoader = new ImageLoader(mRequestQueue, new LruBitmapCache(
 				LruBitmapCache.getCacheSize(context)));
-
+		//this.imageLoader = new ImageLoader(mRequestQueue, new BitmapCache());
 	}
 
 	@Override
@@ -80,6 +82,12 @@ public class NewComicListAdapter extends BaseAdapter {
 		viewHolder.image.setImageUrl(datas.get(position).getImageUrl(),
 				imageLoader);
 		 viewHolder.image.setErrorImageResId(R.drawable.icon_no_data);
+		 
+		/* ImageListener listener = ImageLoader.getImageListener(viewHolder.image,  
+					R.drawable.icon_no_image, R.drawable.icon_no_data);  
+			imageLoader.get(datas.get(position).getImageUrl(), listener);*/
+		 
+		 
 		 viewHolder.title.setText(datas.get(position).getTitle());
 		 //viewHolder.timeImage.setImageResource(R.drawable.detail_icon_time);
 		 viewHolder.focusView.setText(datas.get(position).getMore());

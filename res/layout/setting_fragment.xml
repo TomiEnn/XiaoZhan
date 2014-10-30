@@ -147,9 +147,11 @@
         android:orientation="vertical" >
 
         <TextView
+            android:id="@+id/setting_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="关于作者"
+            android:onClick="author"
             android:textColor="@color/text_color_6"
             android:textSize="16sp" />
           </LinearLayout>

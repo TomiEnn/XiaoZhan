@@ -31,6 +31,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -38,7 +39,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener {
 
 	private String[] mFragmentTitles;
 	private DrawerLayout mDrawerLayout;
@@ -78,6 +79,7 @@ public class MainActivity extends Activity {
 		drawerView = (LinearLayout) findViewById(R.id.drawer_view);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 		loginImage = (ImageView) findViewById(R.id.user_login);
+		loginImage.setOnClickListener(this);
 		//用于事物管理
 		fragmentManager = getFragmentManager();
 		// 为list view设置adapter
@@ -117,6 +119,17 @@ public class MainActivity extends Activity {
 		getActionBar().setTitle("首页");
 	}
 
+	/**
+	 * 当supportInvalidateOptionsMenu()调用时调用， 如果抽屉导航是打开的，则隐藏actionbar上的菜单项
+	 */
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		boolean drawerOpen = mDrawerLayout.isDrawerOpen(drawerView);
+		menu.findItem(R.id.action_search).setVisible(!drawerOpen);
+		menu.findItem(R.id.action_message).setVisible(!drawerOpen);
+		return super.onPrepareOptionsMenu(menu);
+	}
+	
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
@@ -243,20 +256,11 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void setTitle(CharSequence title) {
-		mTitle = title;
-		getActionBar().setTitle("mTitle");
+		this.mTitle = title;
+		getActionBar().setTitle(this.mTitle);
 	}
 
-	/**
-	 * 用户登陆或者查看用户信息
-	 * @param view
-	 */
-	public void toLogin(View view){
-		
-		Intent intent = new Intent(MainActivity.this, UserInformation.class);
-		startActivity(intent);
-		
-	}
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -296,4 +300,18 @@ public class MainActivity extends Activity {
 		}
 		return false;
 	}
+
+	/**
+	 * 用户登陆或者查看用户信息
+	 * @param view
+	 */
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+/*		if(v.getId() == R.id.user_login){
+			Intent intent = new Intent(MainActivity.this, UserInformation.class);
+			startActivity(intent);
+		}
+*/	}
 }

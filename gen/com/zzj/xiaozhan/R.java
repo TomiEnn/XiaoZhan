@@ -1092,31 +1092,38 @@ containing a value of this type.
         public static final int loading_horse3=0x7f02008d;
         public static final int loading_horse4=0x7f02008e;
         public static final int loading_horse5=0x7f02008f;
-        public static final int media_control_background=0x7f020090;
-        public static final int media_control_item_background=0x7f020091;
-        public static final int media_control_item_background_focused=0x7f020092;
-        public static final int media_control_item_background_transition=0x7f020093;
-        public static final int mediacontroller_button=0x7f020094;
-        public static final int mediacontroller_pause=0x7f020095;
-        public static final int mediacontroller_play=0x7f020096;
-        public static final int mediacontroller_sreen_size_100=0x7f020097;
-        public static final int nav_icon_msg=0x7f020098;
-        public static final int nav_icon_search=0x7f020099;
-        public static final int notification_item_comments_icon=0x7f02009a;
-        public static final int notification_item_up_icon=0x7f02009b;
-        public static final int player_pause=0x7f02009c;
-        public static final int player_play=0x7f02009d;
-        public static final int public_default_avatar=0x7f02009e;
-        public static final int scrubber_control_disabled_holo=0x7f02009f;
-        public static final int scrubber_control_focused_holo=0x7f0200a0;
-        public static final int scrubber_control_normal_holo=0x7f0200a1;
-        public static final int scrubber_control_pressed_holo=0x7f0200a2;
-        public static final int scrubber_control_selector_holo=0x7f0200a3;
-        public static final int scrubber_primary_holo=0x7f0200a4;
-        public static final int scrubber_progress_horizontal_holo_dark=0x7f0200a5;
-        public static final int scrubber_secondary_holo=0x7f0200a6;
-        public static final int scrubber_track_holo_dark=0x7f0200a7;
-        public static final int shou_button_userpic=0x7f0200a8;
+        public static final int logo_page=0x7f020090;
+        public static final int media_control_background=0x7f020091;
+        public static final int media_control_item_background=0x7f020092;
+        public static final int media_control_item_background_focused=0x7f020093;
+        public static final int media_control_item_background_transition=0x7f020094;
+        public static final int mediacontroller_button=0x7f020095;
+        public static final int mediacontroller_pause=0x7f020096;
+        public static final int mediacontroller_play=0x7f020097;
+        public static final int mediacontroller_sreen_size_100=0x7f020098;
+        public static final int nav_icon_msg=0x7f020099;
+        public static final int nav_icon_search=0x7f02009a;
+        public static final int notification_item_comments_icon=0x7f02009b;
+        public static final int notification_item_up_icon=0x7f02009c;
+        public static final int player_pause=0x7f02009d;
+        public static final int player_play=0x7f02009e;
+        public static final int public_default_avatar=0x7f02009f;
+        public static final int s1=0x7f0200a0;
+        public static final int s2=0x7f0200a1;
+        public static final int s3=0x7f0200a2;
+        public static final int s4=0x7f0200a3;
+        public static final int s5=0x7f0200a4;
+        public static final int s6=0x7f0200a5;
+        public static final int scrubber_control_disabled_holo=0x7f0200a6;
+        public static final int scrubber_control_focused_holo=0x7f0200a7;
+        public static final int scrubber_control_normal_holo=0x7f0200a8;
+        public static final int scrubber_control_pressed_holo=0x7f0200a9;
+        public static final int scrubber_control_selector_holo=0x7f0200aa;
+        public static final int scrubber_primary_holo=0x7f0200ab;
+        public static final int scrubber_progress_horizontal_holo_dark=0x7f0200ac;
+        public static final int scrubber_secondary_holo=0x7f0200ad;
+        public static final int scrubber_track_holo_dark=0x7f0200ae;
+        public static final int shou_button_userpic=0x7f0200af;
     }
     public static final class id {
         public static final int action_bar=0x7f09001c;
@@ -1129,17 +1136,17 @@ containing a value of this type.
         public static final int action_context_bar=0x7f09001d;
         public static final int action_menu_divider=0x7f090016;
         public static final int action_menu_presenter=0x7f090017;
-        public static final int action_message=0x7f090091;
+        public static final int action_message=0x7f090092;
         public static final int action_mode_close_button=0x7f090024;
-        public static final int action_search=0x7f090090;
+        public static final int action_search=0x7f090091;
         public static final int activity_chooser_view_content=0x7f090025;
         public static final int always=0x7f09000b;
         public static final int beginning=0x7f090011;
         public static final int bottom=0x7f09006f;
         public static final int bottom_controllers_group=0x7f090071;
-        public static final int buffering_group=0x7f09008d;
-        public static final int buffering_text=0x7f09008e;
-        public static final int buffering_view=0x7f09008f;
+        public static final int buffering_group=0x7f09008e;
+        public static final int buffering_text=0x7f09008f;
+        public static final int buffering_view=0x7f090090;
         public static final int checkbox=0x7f09002d;
         public static final int collapseActionView=0x7f09000d;
         public static final int command_and_dianzan=0x7f090086;
@@ -1156,7 +1163,7 @@ containing a value of this type.
         public static final int content_frame=0x7f09003d;
         public static final int content_layout=0x7f09004e;
         public static final int content_ll=0x7f090084;
-        public static final int controller_root=0x7f09008c;
+        public static final int controller_root=0x7f09008d;
         public static final int date_time=0x7f09006c;
         public static final int default_activity_button=0x7f090028;
         public static final int dialog=0x7f09000e;
@@ -1230,6 +1237,7 @@ containing a value of this type.
         public static final int search_plate=0x7f090036;
         public static final int search_src_text=0x7f090037;
         public static final int search_voice_btn=0x7f09003b;
+        public static final int setting_author=0x7f09008a;
         public static final int shortcut=0x7f09002e;
         public static final int shou_button_collect=0x7f09004a;
         public static final int shou_image_llayout=0x7f090047;
@@ -1238,7 +1246,7 @@ containing a value of this type.
         public static final int shou_text_content=0x7f09004f;
         public static final int shou_text_title=0x7f090049;
         public static final int shou_text_username=0x7f09004d;
-        public static final int shouye_swipe_listview=0x7f09008a;
+        public static final int shouye_swipe_listview=0x7f09008b;
         public static final int showCustom=0x7f090007;
         public static final int showHome=0x7f090004;
         public static final int showTitle=0x7f090006;
@@ -1263,7 +1271,7 @@ containing a value of this type.
         public static final int video_number=0x7f09005d;
         public static final int video_time=0x7f09005f;
         public static final int video_title=0x7f09005e;
-        public static final int video_view=0x7f09008b;
+        public static final int video_view=0x7f09008c;
         public static final int withText=0x7f09000c;
     }
     public static final class integer {
@@ -1336,10 +1344,11 @@ containing a value of this type.
         public static final int newcomic_detail_middle=0x7f030029;
         public static final int newcomic_fragment=0x7f03002a;
         public static final int setting_fragment=0x7f03002b;
-        public static final int shouye_fragment=0x7f03002c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002d;
-        public static final int userinformation_layout=0x7f03002e;
-        public static final int videoview=0x7f03002f;
+        public static final int setting_user_layout=0x7f03002c;
+        public static final int shouye_fragment=0x7f03002d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03002e;
+        public static final int userinformation_layout=0x7f03002f;
+        public static final int videoview=0x7f030030;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;
